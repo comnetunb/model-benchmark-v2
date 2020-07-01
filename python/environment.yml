@@ -1,0 +1,4 @@
+name: model-benchmark-v2
+dependencies:
+  - pandas
+  - joblib
