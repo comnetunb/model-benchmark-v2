@@ -26,7 +26,7 @@ echo 'Checking if conda is installed'
 if ! conda info &> /dev/null
 then
     echo "Conda is not installed, installing it..."
-    curl -s -L "https://repo.anaconda.com/miniconda/Miniconda3-py37_4.8.3-Linux-x86_64.sh" | md5sum -c <(echo "751786b92c00b1aeae3f017b781018df  -") | bash
+    curl -L "https://repo.anaconda.com/miniconda/Miniconda3-py37_4.8.3-Linux-x86_64.sh" | tee conda_installer.sh | md5sum -c <(echo "751786b92c00b1aeae3f017b781018df  -") && bash conda_installer.sh || rm -f conda_installer.sh
 fi
 
 ####################################################################################################
