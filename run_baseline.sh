@@ -1,21 +1,15 @@
 #!/bin/bash
 
-FILE=data/dataset.json
-if [ ! -f "$FILE" ]; then
-    echo "$FILE does not exist."
-fi
+####################################################################################################
 
-FILE=config/model.sav
-if [ ! -f "$FILE" ]; then
-    echo "$FILE does not exist."
-fi
+echo 'Sourcing conda shell.bash hook'
+eval "$(conda shell.bash hook)"
 
-FILE=config/scaler.pkl
-if [ ! -f "$FILE" ]; then
-    echo "$FILE does not exist."
-fi
+####################################################################################################
 
-mkdir -p ./data/results
+echo 'Activating conda environment'
+conda activate model-benchmark-v2
 
-# Generate dataset
+####################################################################################################
+
 python3 python/baseline.py ./config ./data/dataset.json ./data/results

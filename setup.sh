@@ -4,11 +4,6 @@
 
 echo 'Checking if all config files exist'
 
-FILE=data/dataset.json
-if [ ! -f "$FILE" ]; then
-    echo "$FILE does not exist."
-fi
-
 FILE=config/model.sav
 if [ ! -f "$FILE" ]; then
     echo "$FILE does not exist."
@@ -38,10 +33,3 @@ eval "$(conda shell.bash hook)"
 
 echo 'Creating conda environment'
 conda env create -f python/environment.yml --force > /dev/null
-
-####################################################################################################
-
-echo 'Activating conda environment'
-conda activate model-benchmark-v2
-
-####################################################################################################
