@@ -8,3 +8,5 @@ then
 fi
 
 ./run_baseline.sh
+./run_java_native.sh
+./run_java_std_interface.sh
