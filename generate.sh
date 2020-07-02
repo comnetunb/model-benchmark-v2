@@ -1,5 +1,7 @@
 #!/bin/bash
 
+cd "$(dirname "$(realpath "$0")")"
+
 # Read length
 length=${1:-10000}
 

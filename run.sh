@@ -1,5 +1,7 @@
 #!/bin/bash
 
+cd "$(dirname "$(realpath "$0")")"
+
 if ! ./check_run.sh
 then
   exit 1
