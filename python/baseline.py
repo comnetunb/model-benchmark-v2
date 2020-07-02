@@ -22,8 +22,18 @@ def run(config_path, dataset_path, output_path):
 
     run_info['name'] = 'Baseline Run - Hot loop in Python implementation'
 
+    run_info['warmup_results'] = []
     run_info['results'] = []
-    for seq in dataset:
+
+    for seq in dataset['warmup']:
+        instance = {}
+        result, duration = classify(classifier, seq)
+        instance['input'] = seq
+        instance['output'] = result
+        instance['duration'] = duration
+        run_info['warmup_results'].append(instance)
+
+    for seq in dataset['data']:
         instance = {}
         result, duration = classify(classifier, seq)
         instance['input'] = seq

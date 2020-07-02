@@ -10,12 +10,23 @@ def save_json(path, dataset):
 
 def generate(seq_count, ranges):
     seq = []
+
     for i in range(seq_count):
         cur_seq = []
         for r in ranges:
             cur_seq.append(random.uniform(r[0], r[1]))
         seq.append(cur_seq)
     return seq
+
+
+def run(path, count, ranges):
+    data = generate(count, ranges)
+
+    inp = {
+        'warmup': generate(count // 10, ranges),
+        'data': generate(count, ranges),
+    }
+    save_json(path, inp)
 
 
 if __name__ == "__main__":
@@ -29,5 +40,4 @@ if __name__ == "__main__":
     ranges = [(12, 450), (0, 5), (1, 8), (3, 70),
               (250, 6900), (0, 201), (0, 49)]
 
-    data = generate(count, ranges)
-    save_json(path, data)
+    run(path, count, ranges)
