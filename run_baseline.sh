@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if ! ./check_run.sh
+then
+  exit 1
+fi
+
 ####################################################################################################
 
 echo 'Sourcing conda shell.bash hook'
