@@ -23,7 +23,7 @@ def run(path, count, ranges):
     data = generate(count, ranges)
 
     inp = {
-        'warmup': generate(count // 10, ranges),
+        'warm_up': generate(count // 10, ranges),
         'data': generate(count, ranges),
     }
     save_json(path, inp)
