@@ -11,7 +11,7 @@ import java.util.Objects;
  */
 public class Main
 {
-    public static void main( String[] args ) throws IOException {
+    public static void main( String[] args ) throws Exception {
         if (args.length < 4) {
             System.out.println("Expected: java -jar file.jar STDIN|NATIVE config_path dataset_path output_path python_path (if applicable)");
             System.exit(1);
@@ -35,7 +35,7 @@ public class Main
             String pythonPath = args[4];
             StdInterface.Run(dataset, configPath, outputPath, pythonPath);
         } else if (Objects.equals(args[0], "NATIVE")) {
-            System.out.println("ok");
+            Native.Run(dataset, configPath, outputPath);
         } else {
             throw new Error("Not supported");
         }
