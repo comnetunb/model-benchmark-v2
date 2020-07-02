@@ -8,8 +8,6 @@ then
   exit 1
 fi
 
-cd ./java
-
 ####################################################################################################
 
 FILE=java/target/Java-1.0-SNAPSHOT-jar-with-dependencies.jar
