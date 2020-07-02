@@ -7,4 +7,4 @@ length=${1:-10000}
 mkdir -p data
 
 # Generate dataset
-python3 python/utils/generator.py data/dataset.json "$length" 10 10 10 10 10 10 10
+python3 python/utils/generator.py data/dataset.json "$length"

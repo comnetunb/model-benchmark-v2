@@ -20,15 +20,14 @@ def generate(seq_count, ranges):
 
 if __name__ == "__main__":
     argc = len(sys.argv)
-    if argc <= 3:
-        print('./generator.py out_path count [limits]')
+    if argc < 3:
+        print('./generator.py out_path count')
         exit(1)
 
     path = sys.argv[1]
     count = int(sys.argv[2])
-    ranges = []
-    for i in range(3, argc):
-        ranges.append((0, float(sys.argv[i])))
+    ranges = [(12, 450), (0, 5), (1, 8), (3, 70),
+              (250, 6900), (0, 201), (0, 49)]
 
     data = generate(count, ranges)
     save_json(path, data)
