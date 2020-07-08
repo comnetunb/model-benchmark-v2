@@ -3,15 +3,16 @@ import pandas as pd
 import joblib
 import time
 from pathlib import Path
+from keras.models import load_model
 
 
 class Classifier:
     def __init__(self, path):
         cur_path = Path(path).resolve()
-        model_path = Path.joinpath(cur_path, 'model.sav')
+        model_path = Path.joinpath(cur_path, 'model.h5')
         scaler_path = Path.joinpath(cur_path, 'scaler.pkl')
 
-        self.classifier = pickle.load(open(model_path, 'rb'))
+        self.classifier = load_model(model_path)
         self.scaler = joblib.load(scaler_path)
 
     def classify(self, values: list):
