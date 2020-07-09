@@ -26,4 +26,4 @@ fi
 
 ####################################################################################################
 
-python3 python/baseline.py ./config ./data/dataset.json ./data/results
+python3 python/baseline.py ./config ./data/dataset.json ./data/results/"$backend"

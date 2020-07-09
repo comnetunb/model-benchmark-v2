@@ -35,4 +35,4 @@ fi
 
 cd "$DIR"
 
-java -jar java/target/Java-1.0-SNAPSHOT-jar-with-dependencies.jar NATIVE "$(pwd)"/config "$(pwd)"/data/dataset.json "$(pwd)"/data/results
+java -jar java/target/Java-1.0-SNAPSHOT-jar-with-dependencies.jar NATIVE "$(pwd)"/config "$(pwd)"/data/dataset.json "$(pwd)"/data/results/"$backend"

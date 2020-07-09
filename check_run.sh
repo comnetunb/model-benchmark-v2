@@ -12,4 +12,5 @@ fi
 
 ####################################################################################################
 
-mkdir -p ./data/results
+mkdir -p ./data/results/cpu
+mkdir -p ./data/results/gpu

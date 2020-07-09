@@ -43,4 +43,4 @@ fi
 
 ####################################################################################################
 
-java -jar "$FILE" STDIN "$(pwd)"/config "$(pwd)"/data/dataset.json "$(pwd)"/data/results "$(pwd)"/python/stdin-interface.py
+java -jar "$FILE" STDIN "$(pwd)"/config "$(pwd)"/data/dataset.json "$(pwd)"/data/results/"$backend" "$(pwd)"/python/stdin-interface.py
