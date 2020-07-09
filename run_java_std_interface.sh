@@ -11,10 +11,10 @@ fi
 
 ####################################################################################################
 
-FILE=java/target/Java-1.0-SNAPSHOT-jar-with-dependencies.jar
+FILE=java/target/Java-1.0-SNAPSHOT-shaded.jar
 if [ ! -f "$FILE" ]; then
   cd ./java
-  if ! (mvn clean && mvn assembly:assembly)
+  if ! (mvn clean && mvn package)
   then
     exit 1
   fi
