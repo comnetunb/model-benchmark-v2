@@ -31,8 +31,15 @@ eval "$(conda shell.bash hook)"
 
 ####################################################################################################
 
-echo 'Activating conda environment'
-conda activate model-benchmark-v2
+backend=${1:-cpu}
+
+if [ $backend = 'cpu' ]; then
+  echo 'Activating conda environment with CPU Backend'
+  conda activate model-benchmark-v2
+else
+  echo 'Activating conda environment with GPU Backend'
+  conda activate model-benchmark-v2.1
+fi
 
 ####################################################################################################
 

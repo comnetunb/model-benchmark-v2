@@ -35,3 +35,4 @@ eval "$(conda shell.bash hook)"
 
 echo 'Creating conda environment'
 conda env create -f python/environment.yml --force > /dev/null
+conda env create -f python/environment2.yml --force > /dev/null

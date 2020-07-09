@@ -7,6 +7,8 @@ then
   exit 1
 fi
 
-./run_baseline.sh
-./run_java_native.sh
-./run_java_std_interface.sh
+backend=${1:-cpu}
+
+./run_baseline.sh "$backend"
+./run_java_native.sh "$backend"
+./run_java_std_interface.sh "$backend"

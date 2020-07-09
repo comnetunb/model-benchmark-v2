@@ -10,6 +10,18 @@ fi
 
 ####################################################################################################
 
+backend=${1:-cpu}
+
+if [ $backend = 'cpu' ]; then
+  echo 'Getting POM of CPU backend'
+  cp -f java/pom-cpu.xml java/pom.xml
+else
+  echo 'Getting POM of GPU backend'
+  cp -f java/pom-gpu.xml java/pom.xml
+fi
+
+####################################################################################################
+
 FILE=java/target/Java-1.0-SNAPSHOT-jar-with-dependencies.jar
 if [ ! -f "$FILE" ]; then
   cd ./java
